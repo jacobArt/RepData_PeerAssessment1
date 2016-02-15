@@ -46,12 +46,10 @@ StepsPerDay<-aggregate(steps~date,data=Activity,sum,na.rm=T)
 #the day with all NA values are kept with 0 steps. 
 #StepsPerDay<-aggregate(Activity$steps, by = list(date=Activity$date), FUN=sum, na.rm=T)
 dim(StepsPerDay)
-```
-```{r, echo = TRUE} 
+
 DailySteps<-StepsPerDay$steps
 hist(x = DailySteps,breaks = 20)
-```
-```{r, echo = TRUE} 
+
 options(digits = 2)
 meanSteps<-mean(DailySteps)
 medianSteps<-median(DailySteps)
